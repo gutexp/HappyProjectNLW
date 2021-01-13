@@ -5,8 +5,9 @@ export default{     //o importante da view é que através dela podemos filtrar 
         return {
             id: image.id,
             //url: `http://192.168.15.3:3333/uploads/${image.path}`,  //utilizado para o celular
-            url: `http://localhost:3333/uploads/${image.path}`,  //utilizado para o browser
-        }
+            // url: `http://localhost:3333/uploads/${image.path}`,  //utilizado para o browser
+            url: `${process.env.API_URL}/uploads/${image.path}`     //utilizado para nosso deploy
+        };
     },
 
     renderMany(images: Image[]){
